@@ -1,6 +1,6 @@
-import React from 'react';
-import logo from '../../resources/logo.svg';
-import '../../styles/main.scss';
+import React from "react";
+import logo from "../../resources/logo.svg";
+import "../../styles/main.scss";
 
 function App() {
   return (
@@ -15,8 +15,8 @@ function App() {
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
-          >
-            <h1 className="text-purple-700">Tailwind Test</h1>
+        >
+          <h1 className="text-purple-700">Tailwind Test</h1>
           Learn React
         </a>
       </header>
