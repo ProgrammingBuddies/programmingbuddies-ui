@@ -11,20 +11,18 @@ const loginReducer = createReducer(
     [startLoginFlow]: (state, action) => {
       window.location.href =
         "https://localhost:5001/login?account=github&redirect=http://localhost:3000/login-callback";
+      const newState = { ...state, loginFlowRunning: false, isLoggedIn: false };
       return {
         type: START_LOGIN_FLOW,
-        state: {
-          loginFlowRunning: true,
-        },
+        state: newState,
       };
     },
     [callbackReceived]: (state, action) => {
+      console.log("login flow completed");
+      const newState = { ...state, isLoggedIn: true, loginFlowRunning: false };
       return {
         type: LOGIN_CALLBACK_RECEIVED,
-        state: {
-          isLoggedIn: true,
-          loginFlowRunning: false,
-        },
+        state: newState,
       };
     },
   }
