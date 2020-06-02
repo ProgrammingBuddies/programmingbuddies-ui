@@ -1,15 +1,16 @@
 import React from "react";
-import logo from "../../resources/logo.svg";
 import "../../styles/main.scss";
-import LoginFlow from "./Login/LoginFlow";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import LoginCallback from "../Login/LoginCallback";
+import AuthorizeRoute from "../Login/AuthorizeRoute";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Switch>
-          <Route path="/lf" component={LoginFlow} />
+          <AuthorizeRoute path="/private" component={LoginCallback} />
+          <Route path="/login-callback" component={LoginCallback} />
         </Switch>
       </BrowserRouter>
     </>
