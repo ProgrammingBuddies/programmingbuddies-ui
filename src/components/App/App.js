@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/main.scss";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import LoginCallback from "../Login/LoginCallback";
 import AuthorizeRoute from "../Login/AuthorizeRoute";
 import PrivateComponent from "../Private/PrivateComponent";

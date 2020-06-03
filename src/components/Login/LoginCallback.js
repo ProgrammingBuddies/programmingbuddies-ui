@@ -1,28 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
-import store from "../../redux/Store";
 import { callbackReceived } from "../../redux/Actions/LoginAction";
+import { useSelector, useDispatch } from "react-redux";
 
 const LoginCallback = ({ component: Component, ...rest }) => {
-  const [btnClicked, setBtnClicked] = useState(false);
+  let dispatch = useDispatch();
+  let isLoggedIn = useSelector((state) => state?.login?.isLoggedIn);
+  let callbackUrl = useSelector((state) => state?.login?.callbackUrl);
 
   useEffect(() => {
-    store.dispatch(callbackReceived());
-  });
+    dispatch(callbackReceived());
+  }, []);
 
   return (
     <>
-      <h1>Login Callback works!</h1>
-      <button
-        onClick={() => {
-          setBtnClicked(true);
-        }}
-      >
-        Redirect to private route
-      </button>
-      {btnClicked && <Redirect to="/private" />}
+      {isLoggedIn && (
+        <>
+          <h1>Starting redirect to {callbackUrl}</h1>
+          <Redirect to={callbackUrl} />
+        </>
+      )}
     </>
   );
 };

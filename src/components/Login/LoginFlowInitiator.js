@@ -1,15 +1,14 @@
-import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import store from "../../redux/Store";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
 import { startLoginFlow } from "../../redux/Actions/LoginAction";
 import React from "react";
+
 const LoginFlowInitiator = (props) => {
   let isLoggedIn = useSelector((state) => state?.login?.isLoggedIn);
+  let dispatch = useDispatch();
 
   useEffect(() => {
-    if (!isLoggedIn) {
-      store.dispatch(startLoginFlow());
-    }
+    dispatch(startLoginFlow(props?.path));
   });
 
   return <></>;
