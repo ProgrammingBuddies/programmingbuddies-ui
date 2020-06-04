@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
 import { Redirect } from "react-router-dom";
-import { callbackReceived } from "../../redux/Actions/LoginAction";
 import { useSelector, useDispatch } from "react-redux";
+import login from "../../redux/Slices/LoginSlice";
 
 const LoginCallback = ({ component: Component, ...rest }) => {
   let dispatch = useDispatch();
@@ -10,7 +9,7 @@ const LoginCallback = ({ component: Component, ...rest }) => {
   let callbackUrl = useSelector((state) => state?.login?.callbackUrl);
 
   useEffect(() => {
-    dispatch(callbackReceived());
+    dispatch(login.actions.callbackReceived());
   }, []);
 
   return (

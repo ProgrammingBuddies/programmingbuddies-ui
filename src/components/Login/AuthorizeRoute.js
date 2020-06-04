@@ -2,8 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import LoginFlowInitiator from "./LoginFlowInitiator";
-import { startLoginFlow } from "../../redux/Actions/LoginAction";
+import login from "../../redux/Slices/LoginSlice";
 
 const AuthorizeRoute = ({ component: Component, ...rest }) => {
   let isLoggedIn = useSelector((state) => state?.login?.isLoggedIn);
@@ -11,7 +10,7 @@ const AuthorizeRoute = ({ component: Component, ...rest }) => {
 
   useEffect(() => {
     if (!isLoggedIn) {
-      dispatch(startLoginFlow(rest?.path));
+      dispatch(login.actions.startLoginFlow(rest?.path));
     }
   }, [isLoggedIn]);
 
@@ -21,8 +20,6 @@ const AuthorizeRoute = ({ component: Component, ...rest }) => {
       render={(props) => {
         if (isLoggedIn) {
           return <Component {...props} />;
-        } else {
-          return <LoginFlowInitiator path={rest.path} />;
         }
       }}
     />
