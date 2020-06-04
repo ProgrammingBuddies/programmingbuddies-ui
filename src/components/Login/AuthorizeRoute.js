@@ -1,10 +1,20 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
 import LoginFlowInitiator from "./LoginFlowInitiator";
+import { startLoginFlow } from "../../redux/Actions/LoginAction";
 
 const AuthorizeRoute = ({ component: Component, ...rest }) => {
   let isLoggedIn = useSelector((state) => state?.login?.isLoggedIn);
+  let dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      dispatch(startLoginFlow(rest?.path));
+    }
+  }, [isLoggedIn]);
+
   return (
     <Route
       {...rest}

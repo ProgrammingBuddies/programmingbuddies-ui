@@ -16,15 +16,13 @@ const loginReducer = createReducer(
         isLoggedIn: false,
         callbackUrl: "",
       };
+
       localStorage.setItem("login-callback", action.payload);
 
       window.location.href =
         "https://localhost:5001/login?account=github&redirect=http://localhost:3000/login-callback";
 
-      return {
-        type: START_LOGIN_FLOW,
-        state: newState,
-      };
+      return newState;
     },
     [callbackReceived]: (state, action) => {
       let callbackUrl = localStorage.getItem("login-callback");
@@ -36,10 +34,7 @@ const loginReducer = createReducer(
         callbackUrl: callbackUrl,
       };
 
-      return {
-        type: LOGIN_CALLBACK_RECEIVED,
-        state: newState,
-      };
+      return newState;
     },
   }
 );
