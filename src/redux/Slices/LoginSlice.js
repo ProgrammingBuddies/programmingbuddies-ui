@@ -17,9 +17,7 @@ const login = createSlice({
       };
 
       localStorage.setItem("login-callback", action.payload);
-
-      window.location.href =
-        "https://localhost:5001/login?account=github&redirect=http://localhost:3000/login-callback";
+      window.location.href = `${process.env.REACT_APP_API_URL}${process.env.REACT_APP_LOGIN_URL}`;
 
       return newState;
     },
@@ -38,42 +36,4 @@ const login = createSlice({
   },
 });
 
-/*
-const loginReducer = createReducer(
-  {
-    loginFlowRunning: false,
-    isLoggedIn: false,
-    callbackUrl: "",
-  },
-  {
-    [startLoginFlow]: (state, action) => {
-      const newState = {
-        ...state,
-        loginFlowRunning: true,
-        isLoggedIn: false,
-        callbackUrl: "",
-      };
-
-      localStorage.setItem("login-callback", action.payload);
-
-      window.location.href =
-        "https://localhost:5001/login?account=github&redirect=http://localhost:3000/login-callback";
-
-      return newState;
-    },
-    [callbackReceived]: (state, action) => {
-      let callbackUrl = localStorage.getItem("login-callback");
-
-      const newState = {
-        ...state,
-        loginFlowRunning: false,
-        isLoggedIn: true,
-        callbackUrl: callbackUrl,
-      };
-
-      return newState;
-    },
-  }
-);
-*/
 export default login;
