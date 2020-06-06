@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const login = createSlice({
   name: "LOGIN",
@@ -23,6 +24,10 @@ const login = createSlice({
     },
     callbackReceived: (state, action) => {
       let callbackUrl = localStorage.getItem("login-callback");
+
+      axios.get("https://localhost:5001/getcurrentuser", {
+        withCredentials: true,
+      });
 
       const newState = {
         ...state,
