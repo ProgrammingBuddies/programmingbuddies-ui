@@ -1,4 +1,5 @@
 import React from "react";
+import "antd/dist/antd.css";
 import "../../styles/main.scss";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import LoginCallback from "../Login/LoginCallback";
