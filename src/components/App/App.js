@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import LoginCallback from "../Login/LoginCallback";
 import AuthorizeRoute from "../Login/AuthorizeRoute";
 import PrivateComponent from "../Private/PrivateComponent";
+import MainLayout from "../MainLayout/MainLayout";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <AuthorizeRoute path="/private" component={PrivateComponent} />
+          <Route path="/mainLayout" component={MainLayout} />
           <Route path="/login-callback" component={LoginCallback} />
         </Switch>
       </BrowserRouter>
