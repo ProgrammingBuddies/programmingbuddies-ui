@@ -1,26 +1,20 @@
 import React from "react";
-import logo from "../../resources/logo.svg";
 import "../../styles/main.scss";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import LoginCallback from "../Login/LoginCallback";
+import AuthorizeRoute from "../Login/AuthorizeRoute";
+import PrivateComponent from "../Private/PrivateComponent";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h1 className="text-purple-700">Tailwind Test</h1>
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Switch>
+          <AuthorizeRoute path="/private" component={PrivateComponent} />
+          <Route path="/login-callback" component={LoginCallback} />
+        </Switch>
+      </BrowserRouter>
+    </>
   );
 }
 
