@@ -3,13 +3,13 @@ import { Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import login from "../../redux/Slices/LoginSlice";
 
-const LoginCallback = ({ component: Component, ...rest }) => {
+const LoginCallback = ({ component: Component, location, ...rest }) => {
   let dispatch = useDispatch();
   let isLoggedIn = useSelector((state) => state?.login?.isLoggedIn);
   let callbackUrl = useSelector((state) => state?.login?.callbackUrl);
 
   useEffect(() => {
-    dispatch(login.actions.callbackReceived());
+    dispatch(login.actions.callbackReceived(location?.search?.split("=")[1]));
   }, []);
 
   return (
