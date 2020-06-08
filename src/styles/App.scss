@@ -3,6 +3,8 @@
 .header {
   height: $header-height !important;
   line-height: $header-height !important;
+  padding: 0;
+  margin: 0;
   position: fixed;
   z-index: 1;
   width: 100%;
@@ -30,21 +32,4 @@
 
 .btn-height-imp {
   height: 60% !important;
-}
-
-// fonts
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
-//Overwriting divider color on footer
-.divider-black {
-  border: 0.25px solid black;
-}
-
-// join us on discord button
-.discord-btn {
-  background-image: url(../resources/join-us-on-discord-button.png);
-  background-size: cover;
-  width: 20em;
-  height: 6em;
-  border: none;
 }

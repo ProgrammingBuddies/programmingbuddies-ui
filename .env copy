@@ -1,0 +1,2 @@
+REACT_APP_API_URL=https://localhost:5001
+REACT_APP_LOGIN_URL=/register?account=github&redirect=http://localhost:3000/login-callback
