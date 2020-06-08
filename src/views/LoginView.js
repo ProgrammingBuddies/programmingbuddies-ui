@@ -1,7 +1,6 @@
 import React from "react";
-import { Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import login from "../../redux/Slices/LoginSlice";
+import login from "../redux/Slices/LoginSlice";
 
 const LoginView = (props) => {
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
@@ -10,7 +9,7 @@ const LoginView = (props) => {
   React.useEffect(() => {
     if (isLoggedIn === false)
       dispatch(login.actions.redirectToLogin(props.path));
-  }, [isLoggedIn]);
+  }, [isLoggedIn, dispatch, props.path]);
 
   return <p>Logging you in...</p>;
 };
