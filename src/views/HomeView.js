@@ -1,7 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { Route, Switch } from "react-router-dom";
-import { Layout, Menu, Button, Space } from "antd";
+import { Layout } from "antd";
 
 import HeaderComponent from "../components/HeaderComponent";
 import FooterComponent from "../components/FooterComponent";
