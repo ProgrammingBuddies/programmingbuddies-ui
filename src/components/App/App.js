@@ -12,8 +12,8 @@ function App() {
     <>
       <BrowserRouter>
         <Switch>
+          <MainLayout />
           <AuthorizeRoute path="/private" component={PrivateComponent} />
-          <Route path="/mainLayout" component={MainLayout} />
           <Route path="/login-callback" component={LoginCallback} />
         </Switch>
       </BrowserRouter>

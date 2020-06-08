@@ -2,6 +2,10 @@ import logo from "../../resources/logo.png";
 import { Layout, Menu, Button, Space } from "antd";
 import React from "react";
 import { useSelector } from "react-redux";
+import { Route, Switch } from "react-router-dom";
+import AuthorizeRoute from "../Login/AuthorizeRoute";
+import PrivateComponent from "../Private/PrivateComponent";
+
 const { Content, Footer, Header } = Layout;
 
 const MainLayout = () => {
@@ -41,7 +45,9 @@ const MainLayout = () => {
           className="site-layout-background"
           style={{ padding: 24, minHeight: 380 }}
         >
-          Content
+          <Switch>
+            <AuthorizeRoute path="/private" component={PrivateComponent} />
+          </Switch>
         </div>
       </Content>
       <Footer style={{ textAlign: "center" }}>Programming Buddies ©2020</Footer>
