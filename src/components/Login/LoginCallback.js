@@ -1,27 +1,19 @@
 import React, { useEffect } from "react";
-import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import login from "../../redux/Slices/LoginSlice";
 
-const LoginCallback = ({ component: Component, location, ...rest }) => {
-  let dispatch = useDispatch();
-  let isLoggedIn = useSelector((state) => state?.login?.isLoggedIn);
-  let callbackUrl = useSelector((state) => state?.login?.callbackUrl);
+const LoginCallback = (props) => {
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
 
   useEffect(() => {
-    dispatch(login.actions.callbackReceived(location?.search?.split("=")[1]));
+    dispatch(login.actions.loginCallback());
+    history.push("/private");
   }, []);
 
-  return (
-    <>
-      {isLoggedIn && (
-        <>
-          <h1>Starting redirect to {callbackUrl}</h1>
-          <Redirect to={callbackUrl} />
-        </>
-      )}
-    </>
-  );
+  return <p>Redirecting...</p>;
 };
 
 export default LoginCallback;

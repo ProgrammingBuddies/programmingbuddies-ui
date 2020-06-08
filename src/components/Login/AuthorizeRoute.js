@@ -4,10 +4,13 @@ import { useSelector, useDispatch } from "react-redux";
 import login from "../../redux/Slices/LoginSlice";
 
 const AuthorizeRoute = (props) => {
-  let isLoggedIn = useSelector((state) => state.login.isLoggedIn);
-  let dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
+  const dispatch = useDispatch();
 
-  if (!isLoggedIn) dispatch(login.actions.startLoginFlow(props.path));
+  React.useEffect(() => {
+    if (isLoggedIn === false)
+      dispatch(login.actions.redirectToLogin(props.path));
+  }, [isLoggedIn]);
 
   return <Route {...props} />;
 };
