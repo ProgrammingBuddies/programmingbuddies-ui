@@ -2,20 +2,20 @@ import logo from "../../resources/logo.png";
 import { Layout, Menu, Button, Space } from "antd";
 import React from "react";
 import { useSelector } from "react-redux";
-import { Route, Switch } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import AuthorizeRoute from "../Login/AuthorizeRoute";
 import PrivateComponent from "../Private/PrivateComponent";
-
-const { Content, Footer, Header } = Layout;
+import CustomFooter from "../CustomFooter/CustomFooter";
+const { Content, Header } = Layout;
 
 const MainLayout = () => {
   let isLoggedIn = useSelector((state) => state?.login?.isLoggedIn);
 
   return (
-    <Layout style={{ height: "100vh" }}>
+    <Layout>
       <Header className="header">
         <div className="div-logo">
-          <img src={logo} className="logo" />
+          <img src={logo} className="logo" alt="Programming Buddies Logo" />
         </div>
         {isLoggedIn && (
           <Menu
@@ -50,7 +50,7 @@ const MainLayout = () => {
           </Switch>
         </div>
       </Content>
-      <Footer style={{ textAlign: "center" }}>Programming Buddies ©2020</Footer>
+      <CustomFooter style={{ textAlign: "center" }} />
     </Layout>
   );
 };
