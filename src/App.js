@@ -7,6 +7,7 @@ import HomeView from "./views/HomeView";
 import LoginView from "./views/LoginView";
 import LoginCallback from "./views/LoginCallback";
 import LoginSuccessView from "./views/LoginSuccessView";
+import LogoutView from "./views/LogoutView";
 
 const App = () => (
   <React.Fragment>
@@ -16,6 +17,7 @@ const App = () => (
         <Route path="/login" component={LoginView} />
         <Route path="/login-callback" component={LoginCallback} />
         <Route path="/login-success" component={LoginSuccessView} />
+        <Route path="/logout" component={LogoutView} />
       </Switch>
     </BrowserRouter>
   </React.Fragment>
