@@ -7,6 +7,7 @@ import FooterComponent from "../components/FooterComponent";
 import LoginView from "./LoginView";
 import LogoutView from "./LogoutView";
 import LoginSuccessView from "./LoginSuccessView";
+import ProjectsListScreenView from "./ProjectsListScreenView.jsx";
 
 const HomeView = () => (
   <Layout>
@@ -16,6 +17,7 @@ const HomeView = () => (
         <Route path="/login" component={LoginView} />
         <Route path="/login-success" component={LoginSuccessView} />
         <Route path="/logout" component={LogoutView} />
+        <Route path="/projects" component={ProjectsListScreenView} />
       </Switch>
     </Layout.Content>
     <FooterComponent />
