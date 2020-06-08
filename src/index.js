@@ -5,6 +5,7 @@ import * as serviceWorker from "./serviceWorker";
 import App from "./App";
 import { Provider } from "react-redux";
 import store from "./redux/Store";
+import "./styles/App.scss";
 
 ReactDOM.render(
   <Provider store={store}>

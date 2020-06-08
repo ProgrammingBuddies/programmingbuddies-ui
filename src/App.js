@@ -14,10 +14,6 @@ const App = () => (
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={HomeView} />
-        <Route path="/login" component={LoginView} />
-        <Route path="/login-callback" component={LoginCallback} />
-        <Route path="/login-success" component={LoginSuccessView} />
-        <Route path="/logout" component={LogoutView} />
       </Switch>
     </BrowserRouter>
   </React.Fragment>
