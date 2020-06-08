@@ -33,3 +33,20 @@
 .btn-height-imp {
   height: 60% !important;
 }
+
+// fonts
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+//Overwriting divider color on footer
+.divider-black {
+  border: 0.25px solid black;
+}
+
+// join us on discord button
+.discord-btn {
+  background-image: url(../resources/join-us-on-discord-button.png);
+  background-size: cover;
+  width: 20em;
+  height: 6em;
+  border: none;
+}
