@@ -8,6 +8,7 @@ import LoginView from "./views/LoginView";
 import LoginCallback from "./views/LoginCallback";
 import LoginSuccessView from "./views/LoginSuccessView";
 import LogoutView from "./views/LogoutView";
+import ProjectsListScreenView from "./views/ProjectsListScreenView.jsx";
 
 const App = () => (
   <React.Fragment>
@@ -18,6 +19,7 @@ const App = () => (
         <Route path="/login-callback" component={LoginCallback} />
         <Route path="/login-success" component={LoginSuccessView} />
         <Route path="/logout" component={LogoutView} />
+        <Route path="/projects" component={ProjectsListScreenView} />
       </Switch>
     </BrowserRouter>
   </React.Fragment>
