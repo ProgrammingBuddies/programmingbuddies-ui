@@ -1,10 +1,10 @@
 import React from "react";
 import { Row, Col, Layout, Divider, Button } from "antd";
-import logo from "../../resources/logo.png";
-import discordBtn from "../../resources/join-us-on-discord-button.png";
+import logo from "../resources/logo.png";
+import discordBtn from "../resources/join-us-on-discord-button.png";
 const { Footer } = Layout;
 
-const CustomFooter = (props) => {
+const FooterComponent = () => {
   return (
     <Footer className="w-full">
       <Divider className="divider-black" />
@@ -39,4 +39,4 @@ const CustomFooter = (props) => {
   );
 };
 
-export default CustomFooter;
+export default FooterComponent;

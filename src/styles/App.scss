@@ -3,6 +3,8 @@
 .header {
   height: $header-height !important;
   line-height: $header-height !important;
+  padding: 0;
+  margin: 0;
   position: fixed;
   z-index: 1;
   width: 100%;
