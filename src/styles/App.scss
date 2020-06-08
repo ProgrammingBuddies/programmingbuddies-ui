@@ -50,3 +50,20 @@
   height: 6em;
   border: none;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", "Open Sans", sans-serif !important;
+}
+
+.login-view-min-width {
+  min-width: 20em;
+}
+
+.social-login-btn {
+  width: 75%;
+}

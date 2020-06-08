@@ -1,6 +1,6 @@
 import React from "react";
 
-const LoginSuccessView = () => (
+const LogoutView = () => (
   <h1 style={styles.title}>
     There is no such page because I don't know how logout works at the backend!
   </h1>
@@ -20,4 +20,4 @@ const styles = {
   },
 };
 
-export default LoginSuccessView;
+export default LogoutView;
