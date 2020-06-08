@@ -6,7 +6,7 @@ import logo from "../resources/logo.png";
 const HeaderComponent = () => (
   <Layout.Header className="header">
     <div className="div-logo">
-      <img src={logo} className="logo" />
+      <img src={logo} className="logo" alt="logo" />
     </div>
     <Menu
       inlineIndent="10em"

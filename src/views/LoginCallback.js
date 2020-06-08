@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import login from "../../redux/Slices/LoginSlice";
+import { useDispatch } from "react-redux";
+import login from "../redux/Slices/LoginSlice";
 
 const LoginCallback = (props) => {
   const history = useHistory();
@@ -10,7 +10,7 @@ const LoginCallback = (props) => {
   React.useEffect(() => {
     dispatch(login.actions.loginCallback());
     history.push("/private");
-  }, []);
+  }, [history, dispatch]);
 
   return <p>Redirecting...</p>;
 };

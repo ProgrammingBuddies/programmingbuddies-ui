@@ -4,7 +4,7 @@ import "antd/dist/antd.css";
 import "./styles/main.scss";
 
 import HomeView from "./views/HomeView";
-import LoginCallback from "./components/Login/LoginCallback";
+import LoginCallback from "./views/LoginCallback";
 
 const App = () => (
   <React.Fragment>
