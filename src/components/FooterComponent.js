@@ -2,6 +2,8 @@ import React from "react";
 import { Row, Col, Layout, Divider, Button } from "antd";
 import logo from "../resources/logo.png";
 import discordBtn from "../resources/join-us-on-discord-button.png";
+import "../styles/App.scss";
+
 const { Footer } = Layout;
 
 const FooterComponent = () => {

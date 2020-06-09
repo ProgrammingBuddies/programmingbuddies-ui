@@ -12,17 +12,17 @@ const HeaderComponent = () => {
       <div className="div-logo">
         <img src={logo} className="logo" alt="logo" />
       </div>
-      <Menu
-        inlineIndent="10em"
-        theme="dark"
-        mode="horizontal"
-        defaultSelectedKeys={["2"]}
-        className="main-menu w-1/2 float-left"
-      >
-        <Menu.Item key="1">nav 1</Menu.Item>
-        <Menu.Item key="2">nav 2</Menu.Item>
-        <Menu.Item key="3">nav 3</Menu.Item>
-      </Menu>
+      {isLoggedIn && (
+        <Menu
+          inlineIndent="10em"
+          theme="dark"
+          mode="horizontal"
+          defaultSelectedKeys={["2"]}
+          className="main-menu w-1/2 float-left"
+        >
+          <Menu.Item key="1">Projects</Menu.Item>
+        </Menu>
+      )}
       <div className="w-auto float-right h-full">
         <Space size="small">
           {isLoggedIn ? <LogoutButton /> : <LoginButtons />}
