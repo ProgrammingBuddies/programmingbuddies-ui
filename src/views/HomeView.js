@@ -7,7 +7,7 @@ import FooterComponent from "../components/FooterComponent";
 import LoginView from "./LoginView";
 import LogoutView from "./LogoutView";
 import LoginSuccessView from "./LoginSuccessView";
-import ProjectsListScreenView from "./ProjectsListScreenView.jsx";
+import ProjectsListScreenView from "./ProjectsListScreenView";
 
 const HomeView = () => (
   <Layout>
