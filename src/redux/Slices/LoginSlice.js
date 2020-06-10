@@ -31,11 +31,13 @@ function redirectToSignUp(state, action) {
 function loginCallback(state, action) {
   const getParams = parseGetParams();
   const token = getParams.token || "";
+  const loginCallbackUrl = getParams.state || "";
 
   return {
     ...state,
     isLoggedIn: token ? true : false,
     authToken: token,
+    loginCallback: loginCallbackUrl,
   };
 }
 

@@ -9,18 +9,18 @@ import LogoutView from "./LogoutView";
 import LoginSuccessView from "./LoginSuccessView";
 import ProjectsListScreenView from "./ProjectsListScreenView";
 import AuthorizeRoute from "../Authentication/AuthorizeRoute";
+import LoginCallback from "./LoginCallback";
 
 const HomeView = () => (
   <Layout>
     <HeaderComponent />
     <Layout.Content className="site-layout" style={styles.content}>
-      <Switch>
-        <Route path="/login" render={() => <LoginRegisterView isLogin />} />
-        <Route path="/signup" render={() => <LoginRegisterView isRegister />} />
-        <Route path="/login-success" component={LoginSuccessView} />
-        <Route path="/logout" component={LogoutView} />
-        <AuthorizeRoute path="/projects" component={ProjectsListScreenView} />
-      </Switch>
+      <Route path="/login" render={() => <LoginRegisterView isLogin />} />
+      <Route path="/signup" render={() => <LoginRegisterView isRegister />} />
+      <Route path="/login-success" component={LoginSuccessView} />
+      <Route path="/logout" component={LogoutView} />
+      <Route path="/login-callback" component={LoginCallback} />
+      <AuthorizeRoute path="/projects" component={ProjectsListScreenView} />
     </Layout.Content>
     <FooterComponent />
   </Layout>
