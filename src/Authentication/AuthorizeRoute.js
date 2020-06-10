@@ -8,8 +8,9 @@ const AuthorizeRoute = (props) => {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    if (isLoggedIn === false)
+    if (isLoggedIn === false) {
       dispatch(login.actions.redirectToLogin(props.path));
+    }
   }, [isLoggedIn]);
 
   return <Route {...props} />;

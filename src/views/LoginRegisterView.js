@@ -11,7 +11,7 @@ const LoginRegisterView = (props) => {
     let action = props.isLogin
       ? login.actions.redirectToLogin
       : login.actions.redirectToSignUp;
-    debugger;
+
     if (isLoggedIn === false) {
       if (provider === "github") {
         dispatch(action(props.path));

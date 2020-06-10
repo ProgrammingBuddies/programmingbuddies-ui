@@ -9,7 +9,7 @@ const LoginCallback = (props) => {
 
   React.useEffect(() => {
     dispatch(login.actions.loginCallback());
-    history.push("/login-success");
+    //history.push("/login-success");
   }, [history, dispatch]);
 
   return <p>Redirecting...</p>;
