@@ -13,10 +13,10 @@ const App = () => (
   <React.Fragment>
     <BrowserRouter>
       <Switch>
+        <Route path="/" component={HomeView} />
         <Route path="/login-callback" component={LoginCallback} />
         <Route path="/login-success" component={LoginSuccessView} />
         <Route path="/logout" component={LogoutView} />
-        <Route path="/" component={HomeView} />
       </Switch>
     </BrowserRouter>
   </React.Fragment>

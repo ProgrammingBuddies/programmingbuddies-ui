@@ -3,14 +3,18 @@ import { useSelector, useDispatch } from "react-redux";
 import login from "../redux/Slices/LoginSlice";
 import { GithubLoginButton } from "react-social-login-buttons";
 
-const LoginView = (props) => {
+const LoginRegisterView = (props) => {
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
   const dispatch = useDispatch();
 
   const initLogin = (provider) => {
+    let action = props.isLogin
+      ? login.actions.redirectToLogin
+      : login.actions.redirectToSignUp;
+    debugger;
     if (isLoggedIn === false) {
       if (provider === "github") {
-        dispatch(login.actions.redirectToLogin(props.path));
+        dispatch(action(props.path));
       }
     }
   };
@@ -28,4 +32,4 @@ const LoginView = (props) => {
   );
 };
 
-export default LoginView;
+export default LoginRegisterView;
