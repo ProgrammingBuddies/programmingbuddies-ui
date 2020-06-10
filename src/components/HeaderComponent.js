@@ -17,7 +17,7 @@ const HeaderComponent = () => {
           inlineIndent="10em"
           theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={["2"]}
+          defaultSelectedKeys={["1"]}
           className="main-menu w-1/2 float-left"
         >
           <Menu.Item key="1">Projects</Menu.Item>
@@ -37,7 +37,9 @@ const LoginButtons = () => (
     <Link to="login">
       <Button type="primary">Login</Button>
     </Link>
-    <Button type="primary">Sign up</Button>
+    <Link to="signup">
+      <Button type="primary">Sign up</Button>
+    </Link>
   </React.Fragment>
 );
 

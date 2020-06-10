@@ -4,20 +4,22 @@ import { Route, Switch } from "react-router-dom";
 
 import HeaderComponent from "../components/HeaderComponent";
 import FooterComponent from "../components/FooterComponent";
-import LoginView from "./LoginView";
+import LoginRegisterView from "./LoginRegisterView";
 import LogoutView from "./LogoutView";
 import LoginSuccessView from "./LoginSuccessView";
 import ProjectsListScreenView from "./ProjectsListScreenView";
+import AuthorizeRoute from "../Authentication/AuthorizeRoute";
 
 const HomeView = () => (
   <Layout>
     <HeaderComponent />
     <Layout.Content className="site-layout" style={styles.content}>
       <Switch>
-        <Route path="/login" component={LoginView} />
+        <Route path="/login" render={() => <LoginRegisterView isLogin />} />
+        <Route path="/signup" render={() => <LoginRegisterView isRegister />} />
         <Route path="/login-success" component={LoginSuccessView} />
         <Route path="/logout" component={LogoutView} />
-        <Route path="/projects" component={ProjectsListScreenView} />
+        <AuthorizeRoute path="/projects" component={ProjectsListScreenView} />
       </Switch>
     </Layout.Content>
     <FooterComponent />

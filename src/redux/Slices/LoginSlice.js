@@ -17,6 +17,15 @@ function redirectToLogin(state, action) {
 }
 
 /*
+ * Redirects to the login page with the current state
+ * Sends the current state too
+ */
+function redirectToSignUp(state, action) {
+  const redirectUrl = `${process.env.REACT_APP_API_URL}${process.env.REACT_APP_SIGN_UP_URL}`;
+  window.location.href = redirectUrl;
+}
+
+/*
  * Recieves back the state from 'redirectToLogin'
  */
 function loginCallback(state, action) {
@@ -37,6 +46,7 @@ const login = createSlice({
   reducers: {
     redirectToLogin,
     loginCallback,
+    redirectToSignUp,
   },
 });
 
