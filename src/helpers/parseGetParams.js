@@ -22,7 +22,7 @@ const parseGetParams = () => {
 
 const paramsReducer = (params, [key, value]) => {
   const key_trimmed = key.trim();
-  const value_trimmed = key.trim();
+  const value_trimmed = value.trim();
 
   // Empty keys are invalid
   if (key_trimmed === "") return params;
