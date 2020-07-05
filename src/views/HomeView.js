@@ -12,8 +12,10 @@ import AuthorizeRoute from "../Authentication/AuthorizeRoute";
 import LoginCallback from "./LoginCallback";
 
 const HomeView = () => (
-  <Layout>
-    <HeaderComponent />
+  <>
+    <div className="mx-auto content">
+      <HeaderComponent />
+      {/*
     <Layout.Content className="site-layout" style={styles.content}>
       <Route path="/login" render={() => <LoginRegisterView isLogin />} />
       <Route path="/signup" render={() => <LoginRegisterView isRegister />} />
@@ -22,8 +24,10 @@ const HomeView = () => (
       <Route path="/login-callback" component={LoginCallback} />
       <AuthorizeRoute path="/projects" component={ProjectsListScreenView} />
     </Layout.Content>
+    */}
+    </div>
     <FooterComponent />
-  </Layout>
+  </>
 );
 
 const styles = {

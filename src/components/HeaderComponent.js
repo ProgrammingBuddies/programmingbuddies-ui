@@ -1,54 +1,60 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { Layout, Menu, Button, Space } from "antd";
-import logo from "../resources/logo.png";
+import logo from "../resources/logo_rounded.png";
 
 const HeaderComponent = () => {
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
 
   return (
-    <Layout.Header className="header">
-      <div className="div-logo">
-        <img src={logo} className="logo" alt="logo" />
+    <>
+      <figure className="logo">
+        <img src={logo} />
+      </figure>
+      <nav>
+        <div className="float-left">
+          <h1 className="p-0 m-0">Programming Buddies</h1>
+        </div>
+
+        <div className="float-right">
+          <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+            <div className="text-sm lg:flex-grow">
+              <a
+                href="#responsive-header"
+                className="block mt-4 lg:inline-block lg:mt-0 text-white mr-4 text-base"
+              >
+                Home
+              </a>
+              <a
+                href="#responsive-header"
+                className="block mt-4 lg:inline-block lg:mt-0 text-white mr-4 text-base"
+              >
+                Explore
+              </a>
+              <a
+                href="#responsive-header"
+                className="block mt-4 lg:inline-block lg:mt-0 text-white text-base"
+              >
+                Add project
+              </a>
+              <button className="btn-main ml-5 text-base">Sign-Up</button>
+              <a
+                href="#responsive-header"
+                className="block mt-4 lg:inline-block lg:mt-0 text-white ml-5 text-base"
+              >
+                Logout
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div className="w-full float-left m-0">
+        <div className="uppercase text-white text-xs">
+          Find your programming buddy
+        </div>
       </div>
-      {isLoggedIn && (
-        <Menu
-          inlineIndent="10em"
-          theme="dark"
-          mode="horizontal"
-          defaultSelectedKeys={["1"]}
-          className="main-menu w-1/2 float-left"
-        >
-          <Menu.Item key="1">Projects</Menu.Item>
-        </Menu>
-      )}
-      <div className="w-auto float-right h-full">
-        <Space size="small">
-          {isLoggedIn ? <LogoutButton /> : <LoginButtons />}
-        </Space>
-      </div>
-    </Layout.Header>
+    </>
   );
 };
-
-const LoginButtons = () => (
-  <React.Fragment>
-    <Link to="login">
-      <Button type="primary">Login</Button>
-    </Link>
-    <Link to="signup">
-      <Button type="primary">Sign up</Button>
-    </Link>
-  </React.Fragment>
-);
-
-const LogoutButton = () => (
-  <React.Fragment>
-    <Link to="logout">
-      <Button type="primary">Logout</Button>
-    </Link>
-  </React.Fragment>
-);
 
 export default HeaderComponent;
